@@ -1,0 +1,21 @@
+version: '3'
+services:
+  php:
+    build: ./php
+    ports:
+      - '80:80'
+    volumes:
+      - ./html:/var/www/html
+    links:
+      - mysql
+  mysql:
+    build: ./mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=php
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+volumes:
+  db:
