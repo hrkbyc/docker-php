@@ -12,7 +12,7 @@ services:
     build: ./mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=php
+      - MYSQL_DATABASE=db
     ports:
       - "3306:3306"
     volumes:
